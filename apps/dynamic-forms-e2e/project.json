@@ -1,0 +1,28 @@
+{
+  "root": "apps/dynamic-forms-e2e",
+  "sourceRoot": "apps/dynamic-forms-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/dynamic-forms-e2e/cypress.json",
+        "devServerTarget": "dynamic-forms:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "dynamic-forms:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dynamic-forms-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dynamic-forms"]
+}
