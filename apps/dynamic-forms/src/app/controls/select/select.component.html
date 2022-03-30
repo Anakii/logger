@@ -1,0 +1,9 @@
+<div>
+    <div>{{config.label}}</div>
+    <select placeholder="fedfed" (change)="onSelect($any($event).target.value)">
+        <option [value]="-1">--</option>
+        <option *ngFor="let option of options" [value]="option.value">
+            {{option.label}}
+        </option>
+    </select>
+</div>

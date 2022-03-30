@@ -1,0 +1,27 @@
+<!-- <p>form-builder works!</p> -->
+<form [formGroup]="group" (ngSubmit)="onSubmitHandler()">
+
+    <!-- <ng-container [formBuilder]="controlsConfig" [group]="group"></ng-container> -->
+    
+    <div *ngFor="let control of controlsConfig">
+
+        <span [ngSwitch]="control.config.type">
+
+            <p *ngSwitchCase="textControls| multiSwitchCase: control.config.type">
+                <dynamic-forms-input [formControlName]="control.name" [config]="control.config"></dynamic-forms-input>
+            </p>
+            
+            <p *ngSwitchCase="controlsTypes.select">
+                <dynamic-forms-select [formControlName]="control.name" [config]="control.config"
+                    [options]="control.config.options"></dynamic-forms-select>
+
+            </p>
+            <p *ngSwitchDefault>
+
+            </p>
+        </span>
+    </div>
+
+    <button [disabled]="group.invalid" type="submit" (click)="onSubmitHandler()">Submit</button>
+    <!-- <button  type="submit">Submit</button> -->
+</form>

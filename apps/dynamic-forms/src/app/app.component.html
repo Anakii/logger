@@ -1,1 +1,10 @@
-<dynamic-forms-nx-welcome></dynamic-forms-nx-welcome>
+
+<div style="display:flex">
+
+  <button (click)="makeError()">create error</button>
+  <button (click)="makeHttpError()">create Http Eerror</button>
+</div>
+<dynamic-form-builder (onSubmit)="onSubmit($event)" [controlsConfig]="signInForm" [group]="group">
+
+</dynamic-form-builder>
+
