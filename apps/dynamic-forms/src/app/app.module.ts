@@ -12,10 +12,7 @@ import { SelectComponent } from './controls/select/select.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SwitchComponent } from './slider/slider.component';
-import { ErrorInterceptor } from './interceptors/http-error.interceptor.';
-import { CustomErrorHandler } from './interceptors/internal-error.interceptor';
-import { LoggerConfig } from './logger/logger.interface';
-import { LoggerModule } from './logger/logger.module';
+import { LoggerModule, LoggerConfig, CustomErrorHandler, ErrorInterceptor, LoggerService } from '@dynamic-forms/logger';
 
 const loggerConfig: LoggerConfig = {
   intervalInSec: 3,
@@ -39,7 +36,8 @@ const MODULES = [
 
 const PROVIDERS = [
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-  { provide: ErrorHandler, useClass: CustomErrorHandler}
+  { provide: ErrorHandler, useClass: CustomErrorHandler },
+  LoggerService
 ]
 @NgModule({
   declarations: [...COMPONENTS],

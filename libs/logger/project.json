@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/logger",
+  "sourceRoot": "libs/logger/src",
+  "prefix": "dynamic-forms",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/logger"],
+      "options": {
+        "jestConfig": "libs/logger/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/logger/src/**/*.ts",
+          "libs/logger/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "dynamic-forms": "apps/dynamic-forms",
-    "dynamic-forms-e2e": "apps/dynamic-forms-e2e"
+    "dynamic-forms-e2e": "apps/dynamic-forms-e2e",
+    "logger": "libs/logger"
   }
 }

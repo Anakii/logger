@@ -1,21 +1,21 @@
-import { ErrorHandler, Injectable } from "@angular/core";
-import { environment } from "../../environments/environment";
-import { LoggerService } from "../logger/logger.service";
+// import { ErrorHandler, Injectable } from "@angular/core";
+// import { environment } from "../../environments/environment";
+// import { LoggerService } from "../logger/logger.service";
 
 
-@Injectable()
-export class CustomErrorHandler implements ErrorHandler {
+// @Injectable()
+// export class CustomErrorHandler implements ErrorHandler {
 
-    constructor( private loggerService: LoggerService) { }
+//     constructor( private loggerService: LoggerService) { }
 
-    public handleError(error) {
+//     public handleError(error) {
 
-        if (!environment.production) {
-            this.loggerService.addLogToQueue(error,error.message)
-        }
+//         if (!environment.production) {
+//             this.loggerService.addLogToQueue(error,error.message)
+//         }
         
 
-    }
+//     }
 
-}
+// }
 
